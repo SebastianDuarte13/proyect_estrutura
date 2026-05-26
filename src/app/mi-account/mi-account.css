@@ -1,0 +1,161 @@
+.account-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f8fafc;
+}
+
+/* Sidebar */
+.account-sidebar {
+  width: 300px;
+  background-color: #003380;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.profile-circle {
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.profile-header h2 {
+  font-size: 18px;
+  margin: 0 0 5px 0;
+}
+
+.profile-header p {
+  font-size: 14px;
+  color: #cce0ff;
+  margin: 0 0 15px 0;
+}
+
+.semester-badge {
+  background-color: #ff9900;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.stats-container {
+  width: 100%;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.stat-value {
+  font-weight: bold;
+}
+
+/* Main Content */
+.account-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-header {
+  padding: 20px 40px;
+  background-color: white;
+  border-bottom: 1px solid #e0e6ed;
+}
+
+.section-title {
+  color: #003380;
+  font-size: 18px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-title .icon {
+  font-size: 20px;
+}
+
+.info-cards {
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 25px;
+  border: 1px solid #e0e6ed;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.card-title {
+  color: #003380;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 0 0 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 40px;
+}
+
+.data-group label {
+  display: block;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.data-group p {
+  margin: 0;
+  font-size: 15px;
+  color: #222;
+  font-weight: 500;
+}
+
+.badge-rounded {
+  display: inline-block;
+  background-color: #e6f0ff;
+  color: #003380;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+}
+
+.status-active {
+  color: #2e8b57 !important;
+}

@@ -1,0 +1,54 @@
+<div class="login-container">
+  <!-- Left Side -->
+  <div class="login-left">
+    <div class="logo-circle">U</div>
+    <h2>Sistema Académico UNAB</h2>
+    <p>Universidad Autónoma de Bucaramanga</p>
+  </div>
+
+  <!-- Right Side -->
+  <div class="login-right">
+    <div class="login-form-container">
+      <h2 class="welcome-text">Bienvenido</h2>
+      <p class="subtitle">Ingresa tus credenciales para acceder</p>
+
+      <form (ngSubmit)="onLogin()">
+        <div class="form-group">
+          <label for="usuario">Código de usuario</label>
+          <div class="input-wrapper">
+            <span class="icon">👤</span>
+            <input 
+              type="text" 
+              id="usuario" 
+              name="usuario" 
+              placeholder="Ej: 20241001" 
+              [(ngModel)]="usuario" 
+              required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="contrasena">Contraseña</label>
+          <div class="input-wrapper">
+            <span class="icon">🔒</span>
+            <input 
+              type="password" 
+              id="contrasena" 
+              name="contrasena" 
+              placeholder="••••••••" 
+              [(ngModel)]="contrasena" 
+              required>
+          </div>
+        </div>
+        
+        <div class="form-group options">
+          <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+        <button type="submit" class="login-btn">Iniciar sesión</button>
+      </form>
+    </div>
+  </div>
+</div>

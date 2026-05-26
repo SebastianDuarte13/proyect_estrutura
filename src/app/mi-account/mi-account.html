@@ -1,0 +1,87 @@
+<div class="account-container">
+  <!-- Sidebar -->
+  <aside class="account-sidebar">
+    <div class="profile-header">
+      <div class="profile-circle">{{ user.initials }}</div>
+      <h2>{{ user.name }}</h2>
+      <p>Cód: {{ user.code }}</p>
+      <div class="semester-badge">Semestre {{ user.semester }}</div>
+    </div>
+    
+    <div class="stats-container">
+      <div class="stat-item">
+        <span>Promedio</span>
+        <span class="stat-value">{{ user.gpa }}</span>
+      </div>
+      <div class="stat-item">
+        <span>Créditos</span>
+        <span class="stat-value">{{ user.credits }}</span>
+      </div>
+      <div class="stat-item">
+        <span>Semestres</span>
+        <span class="stat-value">{{ user.semester }}</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="account-main">
+    <header class="main-header">
+      <h1 class="section-title">
+        <span class="icon">👤</span> Información del estudiante
+      </h1>
+    </header>
+
+    <div class="info-cards">
+      <!-- Datos Personales -->
+      <section class="info-card">
+        <h3 class="card-title">
+          <span class="icon">ℹ️</span> DATOS PERSONALES
+        </h3>
+        <div class="grid-2">
+          <div class="data-group">
+            <label>Nombre completo</label>
+            <p>{{ user.name }}</p>
+          </div>
+          <div class="data-group">
+            <label>Documento</label>
+            <p>{{ user.document }}</p>
+          </div>
+          <div class="data-group">
+            <label>Correo institucional</label>
+            <p>{{ user.email }}</p>
+          </div>
+          <div class="data-group">
+            <label>Teléfono</label>
+            <p>{{ user.phone }}</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Información Académica -->
+      <section class="info-card">
+        <h3 class="card-title">
+          <span class="icon">🎓</span> INFORMACIÓN ACADÉMICA
+        </h3>
+        <div class="grid-2">
+          <div class="data-group">
+            <label>Programa</label>
+            <p>{{ user.program }}</p>
+          </div>
+          <div class="data-group">
+            <label>Semestre asignado</label>
+            <p class="badge-rounded">{{ user.assignedSemester }}</p>
+          </div>
+          <div class="data-group">
+            <label>Facultad</label>
+            <p>{{ user.faculty }}</p>
+          </div>
+          <div class="data-group">
+            <label>Estado</label>
+            <p class="status-active">{{ user.status }}</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>

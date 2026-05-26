@@ -1,0 +1,82 @@
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="logo">
+      <div class="logo-circle">U</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#" (click)="goToHome()"><span class="icon">🏠</span></a></li>
+      <li class="active"><a href="#" (click)="goToGestion()"><span class="icon">👥</span></a></li>
+      <li><a href="#"><span class="icon">🎓</span></a></li>
+      <li><a href="#"><span class="icon">📅</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Header -->
+    <header class="top-header">
+      <h1 class="page-title">
+        <span class="icon">👤+</span> Crear nuevo usuario
+      </h1>
+    </header>
+
+    <!-- Form Container -->
+    <div class="content-body">
+      <form (ngSubmit)="onCreateUser()">
+        <!-- Datos Personales -->
+        <div class="card">
+          <h3 class="card-title"><span class="icon">👤</span> DATOS PERSONALES</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>NOMBRES</label>
+              <input type="text" name="nombres" [(ngModel)]="user.nombres" placeholder="María Camila" required>
+            </div>
+            <div class="form-group">
+              <label>APELLIDOS</label>
+              <input type="text" name="apellidos" [(ngModel)]="user.apellidos" placeholder="Torres López" required>
+            </div>
+            <div class="form-group">
+              <label>DOCUMENTO DE IDENTIDAD</label>
+              <input type="text" name="documento" [(ngModel)]="user.documento" placeholder="1098123456" required>
+            </div>
+            <div class="form-group">
+              <label>CORREO INSTITUCIONAL</label>
+              <input type="email" name="correo" [(ngModel)]="user.correo" placeholder="Ej: m.torres@unab.edu.co" required>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rol del Usuario -->
+        <div class="card">
+          <h3 class="card-title"><span class="icon">🛡️</span> ROL DEL USUARIO</h3>
+          <div class="role-grid">
+            <div class="role-option" 
+                 [class.active]="user.rol === 'Estudiante'" 
+                 (click)="user.rol = 'Estudiante'">
+              <span class="icon">👤</span>
+              <span>Estudiante</span>
+            </div>
+            <div class="role-option" 
+                 [class.active]="user.rol === 'Docente'" 
+                 (click)="user.rol = 'Docente'">
+              <span class="icon">💻</span>
+              <span>Docente</span>
+            </div>
+            <div class="role-option" 
+                 [class.active]="user.rol === 'Admin'" 
+                 (click)="user.rol = 'Admin'">
+              <span class="icon">⚙️</span>
+              <span>Admin</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <p class="info-text" *ngIf="successMessage">{{ successMessage }}</p>
+          <button type="submit" class="btn-guardar">Guardar usuario</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

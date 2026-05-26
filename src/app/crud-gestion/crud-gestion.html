@@ -1,0 +1,72 @@
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="logo">
+      <div class="logo-circle">U</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#" (click)="goToHome()"><span class="icon">🏠</span></a></li>
+      <li><a href="#"><span class="icon">📋</span></a></li>
+      <li><a href="#"><span class="icon">🎓</span></a></li>
+      <li class="active"><a href="#"><span class="icon">👥</span></a></li>
+      <li><a href="#"><span class="icon">📅</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Header -->
+    <header class="top-header">
+      <h1 class="page-title">Gestión de usuarios</h1>
+      <button class="btn-nuevo" (click)="goToNewUser()">+ Nuevo usuario</button>
+    </header>
+
+    <div class="content-body">
+      <!-- Filters -->
+      <div class="filters">
+        <button class="filter-btn" [class.active]="currentFilter === 'Todos'" (click)="setFilter('Todos')">Todos</button>
+        <button class="filter-btn" [class.active]="currentFilter === 'Estudiantes'" (click)="setFilter('Estudiantes')">Estudiantes</button>
+        <button class="filter-btn" [class.active]="currentFilter === 'Docentes'" (click)="setFilter('Docentes')">Docentes</button>
+        <button class="filter-btn" [class.active]="currentFilter === 'Admin'" (click)="setFilter('Admin')">Admin</button>
+      </div>
+
+      <!-- Table -->
+      <div class="table-container">
+        <table class="user-table">
+          <thead>
+            <tr>
+              <th>NOMBRE</th>
+              <th>CORREO</th>
+              <th>ROL</th>
+              <th>ESTADO</th>
+              <th>ACCIONES</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of filteredUsers">
+              <td class="name-cell">
+                <div class="avatar {{ user.color || 'bg-blue' }}">{{ user.initials | uppercase }}</div>
+                <span>{{ user.nombres }} {{ user.apellidos }}</span>
+              </td>
+              <td class="email-cell">{{ user.correo }}</td>
+              <td>{{ user.rol }}</td>
+              <td>
+                <span class="status-badge" [class.status-active]="user.estado === 'Activo'" [class.status-inactive]="user.estado === 'Inactivo'">
+                  {{ user.estado }}
+                </span>
+              </td>
+              <td class="actions-cell">
+                <button class="action-btn view-btn"><span class="icon">👁️</span></button>
+                <button class="action-btn edit-btn"><span class="icon">✏️</span></button>
+                <button class="action-btn delete-btn" (click)="deleteUser(user)"><span class="icon">🗑️</span></button>
+              </td>
+            </tr>
+            <tr *ngIf="filteredUsers.length === 0">
+              <td colspan="5" class="empty-state">No hay usuarios para mostrar.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
